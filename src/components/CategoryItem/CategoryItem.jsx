@@ -1,6 +1,6 @@
 import "./CategoryItem.scss";
 
-const CategoryItem = ({ category: { id, imageUrl, title } }) => (
+const CategoryItem = ({ category: { id, title, imageUrl } }) => (
 	<>
 		<div key={id} className="category-container">
 			<div
@@ -9,7 +9,7 @@ const CategoryItem = ({ category: { id, imageUrl, title } }) => (
 			/>
 			<div className="category-body-container">
 				<h2>{title}</h2>
-				<p>Shop now</p>
+				<p>Shop Now</p>
 			</div>
 		</div>
 	</>
