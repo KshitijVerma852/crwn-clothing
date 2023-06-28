@@ -3,7 +3,6 @@ import { useState } from "react";
 import FormInput from "../FormInput/FormInput";
 import Button from "../Button/Button";
 import {
-	createUserDocFromAuth,
 	signAuthUserWithEmailAndPassword,
 	signInWithGooglePopup
 } from "../../utils/firebase/firebase";
@@ -28,13 +27,15 @@ const SignInForm = () => {
 
 	const logGoogleUser = async () => {
 		const { user } = await signInWithGooglePopup();
-		await createUserDocFromAuth(user);
 	};
 
 	const handleSubmit = async e => {
 		e.preventDefault();
 		try {
-			await signAuthUserWithEmailAndPassword(email, password);
+			const { user } = await signAuthUserWithEmailAndPassword(
+				email,
+				password
+			);
 			resetFormFields();
 		} catch (error) {
 			switch (error.code) {
@@ -74,7 +75,11 @@ const SignInForm = () => {
 					/>
 					<div className="buttons-container">
 						<Button type="submit">Sign in</Button>
-						<Button type="button" buttonType="google" onClick={logGoogleUser}>
+						<Button
+							type="button"
+							buttonType="google"
+							onClick={logGoogleUser}
+						>
 							Google sign in
 						</Button>
 					</div>

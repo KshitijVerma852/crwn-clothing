@@ -3,6 +3,7 @@ import Home from "./routes/Home/Home";
 import Authentication from "./routes/Authentication/Authentication";
 import Navigation from "./components/Navigation/Navigation";
 
+// TODO: Make the shop component.
 const Shop = () => {
 	return (
 		<>
