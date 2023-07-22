@@ -1,7 +1,7 @@
 import "../SignUpForm/SignUpForm.scss";
 import { useState } from "react";
 import FormInput from "../FormInput/FormInput";
-import Button from "../Button/Button";
+import Button, { BUTTON_TYPE_CLASSES } from "../Button/Button";
 import {
 	signAuthUserWithEmailAndPassword,
 	signInWithGooglePopup
@@ -77,7 +77,7 @@ const SignInForm = () => {
 						<Button type="submit">Sign in</Button>
 						<Button
 							type="button"
-							buttonType="google"
+							buttonType={BUTTON_TYPE_CLASSES.google}
 							onClick={logGoogleUser}
 						>
 							Google sign in
