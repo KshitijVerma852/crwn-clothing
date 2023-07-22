@@ -26,13 +26,13 @@ const SignInForm = () => {
 	};
 
 	const logGoogleUser = async () => {
-		const { user } = await signInWithGooglePopup();
+		await signInWithGooglePopup();
 	};
 
 	const handleSubmit = async e => {
 		e.preventDefault();
 		try {
-			const { user } = await signAuthUserWithEmailAndPassword(
+			await signAuthUserWithEmailAndPassword(
 				email,
 				password
 			);
