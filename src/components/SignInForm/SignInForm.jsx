@@ -32,10 +32,7 @@ const SignInForm = () => {
 	const handleSubmit = async e => {
 		e.preventDefault();
 		try {
-			await signAuthUserWithEmailAndPassword(
-				email,
-				password
-			);
+			await signAuthUserWithEmailAndPassword(email, password);
 			resetFormFields();
 		} catch (error) {
 			switch (error.code) {
