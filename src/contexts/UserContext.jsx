@@ -37,16 +37,6 @@ export const UserProvider = ({ children }) => {
 		dispatch(createAction(USER_ACTION_TYPES.SET_CURRENT_USER, user));
 	};
 
-	useEffect(
-		() =>
-			onAuthStateChangedListener(user => {
-				console.log(user);
-				if (user) createUserDocFromAuth(user).then();
-				setCurrentUser(user);
-			}),
-		[]
-	);
-
 	const value = { currentUser, setCurrentUser };
 
 	return (
