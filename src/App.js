@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Home from "./routes/Home/Home";
 import Authentication from "./routes/Authentication/Authentication";
 import Navigation from "./components/Navigation/Navigation";
@@ -18,7 +18,6 @@ const App = () => {
 	useEffect(
 		() =>
 			onAuthStateChangedListener(user => {
-				console.log(user);
 				if (user) createUserDocFromAuth(user).then();
 				dispatch(setCurrentUser(user));
 			}),
