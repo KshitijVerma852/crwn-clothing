@@ -3,11 +3,11 @@ import { useParams } from "react-router-dom";
 import "./Category.scss";
 import ProductCard from "../../components/ProductCard/ProductCard";
 import { useSelector } from "react-redux";
-import { getCategoryItems } from "../../store/categories/categoriesSelector";
+import { selectCategoriesMap } from "../../store/categories/categoriesSelector";
 
 const Category = () => {
 	const { category } = useParams();
-	const categoriesMap = useSelector(getCategoryItems);
+	const categoriesMap = useSelector(selectCategoriesMap);
 	console.log(categoriesMap);
 	const [products, setProducts] = useState(categoriesMap[category]);
 
