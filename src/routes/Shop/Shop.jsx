@@ -8,7 +8,6 @@ import { categoriesActionCreator } from "../../store/categories/categoriesAction
 
 const Shop = () => {
 	const dispatch = useDispatch();
-
 	useEffect(() => {
 		(async () => {
 			dispatch(
